@@ -30,7 +30,8 @@ pageEncoding="UTF-8"%>
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">
-			<li><a href="Login.jsp">Login</a></li>
+			<li><a href="/LoginServlet.do">Login</a></li>
+				<li><a href="/SignInServlet.do">Sign-In</a></li>
 		</ul>
 
 	</nav>
