@@ -64,13 +64,13 @@ public class LoginServlet extends HttpServlet {
 	    	  if(rs.next()) {
 	    		  
 	    		 
-	    		  RequestDispatcher get=request.getRequestDispatcher("/WEB-INF/views/Products.jsp");
+	    		  RequestDispatcher get=request.getRequestDispatcher("/WEB-INF/views/Homepage.jsp");
 	  			get.forward(request, response);
 	    		 
 	    		   	return;
 	    	  }
 	    	  else {
-	    	  RequestDispatcher get=request.getRequestDispatcher("/WEB-INF/views/Error.jsp");
+	    		  RequestDispatcher get=request.getRequestDispatcher("/WEB-INF/views/Login.jsp");
 	  			get.forward(request, response);
 	    	  return;
 	    	  }

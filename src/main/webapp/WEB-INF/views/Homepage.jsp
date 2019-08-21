@@ -18,31 +18,23 @@ pageEncoding="UTF-8"%>
 
 		<a href="/" class="navbar-brand">Brand</a>
 
-		<ul class="nav navbar-nav">
+		 <ul class="nav navbar-nav">
 			<li class="active"><a href="#">Home</a></li>
 			<li><a href="">Product</a></li>
 			<li><a href="">Category</a></li>
-			
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">
-			<li><form action="/LoginServlet.do" method ="post">
-			<input type = "submit" value = "Login">
-			
-			</form> </li>
-			<li><a class = "nav-link" href="">LogOut</a></li>
+			<li><a class = "nav-link" href="/Logout.do">LogOut</a></li>
 		</ul>
 
 	</nav>
 	
-<div class="container">
-<h1>Welcome  To My Website </h1>
-
-		<br /> To Continue 
-		
-	
-		<form action="/SignInServlet.do" method ="post" >
-			<input type="submit" value="Sign-in">
+		<div class="container">
+			<h1>Welcome  To The Market </h1>
+						<br /> 
+		<form action="" method ="post" >
+			<input class="btn btn-success" type="submit" value="See Products">
 		</form>
 
 	 <br />
