@@ -19,6 +19,7 @@ import javax.servlet.http.HttpSessionListener;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.PreparedStatement;
+import com.project.connection.DatabaseConnection;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -50,11 +51,10 @@ public class LoginServlet extends HttpServlet {
 	     response.setContentType("text/html; charset = UTF-8");
 	      String password = request.getParameter("password");
 	      String username = request.getParameter("username");
-	      //connect to my mysql and verify username and password
+	      
 	      
 	      try {
-	    	  Class.forName("com.mysql.jdbc.Driver");
-	    	  java.sql.Connection c = DriverManager.getConnection("jdbc:mysql://localhost:3306/users","root","");
+	    	  java.sql.Connection c = DatabaseConnection.connect();
 	    	  java.sql.PreparedStatement pc = c.prepareStatement("select USERNAME,passwords from ventors where USERNAME = ? and passwords =?");
 	    	  pc.setString(1,username);
 	    	  pc.setString(2,password);
@@ -75,7 +75,7 @@ public class LoginServlet extends HttpServlet {
 	    	  return;
 	    	  }
 	    	  
-	      } catch(ClassNotFoundException | SQLException e) {
+	      } catch(Exception e) {
 	    	
 	    	  ((Throwable) e).printStackTrace();
 	      }

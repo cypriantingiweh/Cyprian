@@ -25,30 +25,33 @@ pageEncoding="UTF-8"%>
 					<a href="/" class="navbar-brand">Brand</a>
 			
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="#">Home</a></li>
+						<li><a href="/">Home</a></li>
 						<li><a href="">Products</a></li>
 						<li><a href="">Category</a></li>
 					</ul>
 			
 					<ul class="nav navbar-nav navbar-right">
 						<li><a  class = "nav-link" href="/LoginServlet.do">Login</a></li>
-							<li><a class = "nav-link" href="/SignInServlet.do">Sign-In</a></li>
+							<li><a class="active" href="#">Sign-In</a></li>
 					</ul>
 			
 				</nav>
 		
 	<div class="container">
-		<h1>Welcome  sign-in to continue </h1>
-		
-		<form action="/SignInServlet.do" method="post">
-			<table class="table table-striped">
-				<tbody>
-					 <tr> <td>Name:</td>     <td> <input type="text" name="name"></td> </tr>
-					 <tr> <td> Username:</td> <td><input type="text" name="username"></td> </tr>
-					 <tr> <td> Password:</td>  <td><input type="text" name="password"></td> </tr>
-				 </tbody>
-		    </table>
-		               <input class="btn btn-success" type="submit" value="sign-in">
+		<h1>Welcome  To Enter my Shope Sign-in </h1>
+		<br /><br />
+		<form action="/SignInServlet.do" method="post" class = "form-group">
+			
+				   
+					 <input type="text" name="name" class = "form-control" value = "Name">
+					 <br />
+					 <br />
+					 <input type="text" name="username" class = "form-control"  value = "Username">
+					 <br />
+					 <br />
+					 <input type="text" name="password" class = "form-control" value = "Password">
+						<br />
+		              <input class="btn btn-success" type="submit" value="sign-in">
 		</form>
 	</div>
 </body>

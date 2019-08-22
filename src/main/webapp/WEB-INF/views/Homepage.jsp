@@ -25,7 +25,7 @@ pageEncoding="UTF-8"%>
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">
-			<li><a class = "nav-link" href="/Logout.do">LogOut</a></li>
+			<li><a class = "nav-link" href="/logout.do">LogOut</a></li>
 		</ul>
 
 	</nav>
@@ -33,7 +33,7 @@ pageEncoding="UTF-8"%>
 		<div class="container">
 			<h1>Welcome  To The Market </h1>
 						<br /> 
-		<form action="" method ="post" >
+		<form action="/ProductServlet.do" method ="post" >
 			<input class="btn btn-success" type="submit" value="See Products">
 		</form>
 

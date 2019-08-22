@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.project.connection.DatabaseConnection;
+
 /**
  * Servlet implementation class RegisterController
  */
@@ -28,8 +30,12 @@ public class SignInServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	   {
 	     //request.getSession().getAttribute("text/html");
-	      RequestDispatcher g=request.getRequestDispatcher("/WEB-INF/views/Sign-in.jsp");
-			g.forward(request, response);
+		
+		  RequestDispatcher
+		  g=request.getRequestDispatcher("/WEB-INF/views/Sign.jsp");
+		  g.forward(request, response);
+		 
+    	//response.sendRedirect("/WEB-INF/views/Sign-in.jsp");
 			   
 	   }
 	
@@ -43,9 +49,7 @@ public class SignInServlet extends HttpServlet {
     	      
             
             String sql = "insert into ventors(passwords,USERNAME,Name) values(?,?,?)";
-            
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/users","root","");
+            java.sql.Connection conn = DatabaseConnection.connect();
             PreparedStatement pst = conn.prepareStatement(sql);
             
             pst.setString(1, password);
@@ -58,9 +62,6 @@ public class SignInServlet extends HttpServlet {
 	  			get.forward(request, response);
 	    	  return;
 
-        }
-        catch(ClassNotFoundException e){
-            e.printStackTrace();
         }
         catch(SQLException e){
             e.printStackTrace();
