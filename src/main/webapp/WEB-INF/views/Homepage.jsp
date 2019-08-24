@@ -16,16 +16,17 @@ pageEncoding="UTF-8"%>
 
 	<nav class="navbar navbar-default">
 
-		<a href="/" class="navbar-brand">Brand</a>
+		<a href="#">Blank</a>
 
 		 <ul class="nav navbar-nav">
-			<li class="active"><a href="#">Home</a></li>
-			<li><a href="">Product</a></li>
-			<li><a href="">Category</a></li>
+			<li><a class="active" href="#">Home</a></li>
+			<li><a href="/ProdutServlet.do">Product</a></li>
+			<li><a href="#">Category</a></li>
 		</ul>
 
 		<ul class="nav navbar-nav navbar-right">
-			<li><a class = "nav-link" href="/logout.do">LogOut</a></li>
+			<li><a href="/SignInServlet.do">Sign-In</a></li>
+			<li><a href="/logout.do">LogOut</a></li>
 		</ul>
 
 	</nav>
@@ -33,9 +34,7 @@ pageEncoding="UTF-8"%>
 		<div class="container">
 			<h1>Welcome  To The Market </h1>
 						<br /> 
-		<form action="/ProductServlet.do" method ="post" >
-			<input class="btn btn-success" type="submit" value="See Products">
-		</form>
+			<a href = "/ProductServlet.do"  class="btn btn-success"> See products</a>			
 
 	 <br />
  </div>

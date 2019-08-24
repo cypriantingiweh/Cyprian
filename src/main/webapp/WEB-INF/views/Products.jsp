@@ -27,14 +27,14 @@ pageEncoding="UTF-8"%>
 					<a href="/" class="navbar-brand">Brand</a>
 			
 					<ul class="nav navbar-nav">
-						<li><a href="/">Home</a></li>
-						<li><a href="/">Products</a></li>
-						<li><a href="/">Category</a></li>
+						<li><a href="#">Home</a></li>
+						<li><a class = "active" href="#">Products</a></li>
+						<li><a href="#">Category</a></li>
 					</ul>
 			
 					<ul class="nav navbar-nav navbar-right">
-						<li><a class="active" href="#">Login</a></li>
-							<li><a class = "nav-link" href="/SignInServlet.do">Sign-In</a></li>
+						<li><a class="active" href="/logout.do">LogOut</a></li>
+							<li><a href="/SignInServlet.do">Sign-In</a></li>
 					</ul>
 			
 				</nav>
@@ -46,6 +46,7 @@ pageEncoding="UTF-8"%>
 				<table  class = "table table-striped">
 				<tr>
 				<th><b>P_ID</b></th>
+				<th>Product Images</th>
 				<th>Product Description</th>
 				<th>Product Category</th>
 				<th>EditAction</th>
@@ -55,13 +56,19 @@ pageEncoding="UTF-8"%>
 		<c:forEach items="${data}" var="data">
 				<tr>
 					<td>${data.getPid()}</td>
+					<td>${data.getRawBytes()}</td>
 					<td>${data.getPname()}</td>
 					<td>${data.getPcategory()}</td>
-					<td><a class="btn btn-succes" href="">Edit</a></td>
-					<td><a class="btn btn-danger" href="">Delete</a></td>
+					<td>
+					<a class="btn btn-success" href = "/RetrieveServlet.do?Pid=${ data.getPid()}&PName=${data.getPname()}&PCategory=${ data.getPcategory()}" >
+					Edit</a>
+					 </td>
+					<td><a class="btn btn-danger" href="/deleteproducts.do?Pid=${data.getPid()}
+					&Pname = ${data.getPname()}&Pcategory = ${ data.getPcategory()}">Delete</a></td>
 				</tr>
 			</c:forEach>		
 		</table>
+		<a href = "/Addproducts.do" class = "btn btn-success"> AddProduct</a>
 	</div>
 </body>
 </html>

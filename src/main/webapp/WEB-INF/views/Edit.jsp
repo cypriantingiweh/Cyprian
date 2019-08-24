@@ -26,32 +26,38 @@ pageEncoding="UTF-8"%>
 			
 					<ul class="nav navbar-nav">
 						<li><a href="#">Home</a></li>
-						<li><a href="#">Products</a></li>
+						<li class="navbar-brand"><a  class="active" href="/ProductServlet.do">Products</a></li>
 						<li><a href="#">Category</a></li>
 					</ul>
 			
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/LoginServlet.do">Login</a></li>
-							<li><a class="active" href="#">Sign-In</a></li>
+						<li><a  class = "nav-link" href="/logout.do">LogOut</a></li>
+							<li><href="/SignInServlet.do">Sign-In</a></li>
 					</ul>
 			
 				</nav>
 		
 	<div class="container">
-		<h1>Welcome  To Enter my Shope Sign-in </h1>
+		<h3>Edit product description and category </h3>
 		<br /><br />
-		<form action="/SignInServlet.do" method="post" class = "form-group">
+		<form action="/EditServlet.do" method="post" class = "form-group">
+						
+				Pid
+					<input type="text" name="Pid" class = "form-control" value = "<%=request.getAttribute("P-id") %>">
+					<br/>
+					<br/>
+				   Product Description
 			
-				   
-					 <input type="text" name="name" class = "form-control" value = "Name">
+					<input type="text" name="PName" class = "form-control" value = "<%=request.getAttribute("P-Name") %>">
+					 <br />
+					 
+					 <br />
+					 Product Category
+					 <input type="text" name="PCategory" class = "form-control"  value = "<%=request.getAttribute("P-Category") %>">
 					 <br />
 					 <br />
-					 <input type="text" name="username" class = "form-control"  value = "Username">
-					 <br />
-					 <br />
-					 <input type="text" name="password" class = "form-control" value = "Password">
-						<br />
-		              <input class="btn btn-success" type="submit" value="sign-in">
+					
+		              <input class="btn btn-success" type="submit" value="Edit">
 		</form>
 	</div>
 </body>

@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpServletRequest;
 
-@WebFilter(urlPatterns = "/LoginServlet.do.do")
+@WebFilter(urlPatterns = "/LoginServlet.do")
 public class LoginRequiredFilter implements Filter {
 
 	@Override

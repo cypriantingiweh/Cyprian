@@ -21,7 +21,7 @@ pageEncoding="UTF-8"%>
 	<body>
 		 <nav class="navbar navbar-default">
 			
-					<a href="/" class="navbar-brand">Brand</a>
+					<a href="#">Brand</a>
 			
 					<ul class="nav navbar-nav">
 						<li><a href="/">Home</a></li>

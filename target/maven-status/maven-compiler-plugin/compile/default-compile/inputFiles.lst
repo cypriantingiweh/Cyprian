@@ -1,5 +1,11 @@
+C:\Users\CYPRAIN\eclipse-workspace\catalog-project\src\main\java\com\project\addproduct\AddProduct.java
 C:\Users\CYPRAIN\eclipse-workspace\catalog-project\src\main\java\com\project\signin\SignInServlet.java
-C:\Users\CYPRAIN\eclipse-workspace\catalog-project\src\main\java\com\project\home\HomeServlet.java
+C:\Users\CYPRAIN\eclipse-workspace\catalog-project\src\main\java\com\project\product\ProductServlet.java
+C:\Users\CYPRAIN\eclipse-workspace\catalog-project\src\main\java\com\project\delete\DeleteProduct.java
+C:\Users\CYPRAIN\eclipse-workspace\catalog-project\src\main\java\com\project\edit\EditServlet.java
+C:\Users\CYPRAIN\eclipse-workspace\catalog-project\src\main\java\com\project\todo\Todo.java
 C:\Users\CYPRAIN\eclipse-workspace\catalog-project\src\main\java\com\project\loginservlet\LoginServlet.java
+C:\Users\CYPRAIN\eclipse-workspace\catalog-project\src\main\java\com\project\connection\DatabaseConnection.java
 C:\Users\CYPRAIN\eclipse-workspace\catalog-project\src\main\java\com\project\filter\LoginRequiredFilter.java
 C:\Users\CYPRAIN\eclipse-workspace\catalog-project\src\main\java\com\project\logout\LogOutServlet.java
+C:\Users\CYPRAIN\eclipse-workspace\catalog-project\src\main\java\com\project\retrieve\RetrieveServlet.java

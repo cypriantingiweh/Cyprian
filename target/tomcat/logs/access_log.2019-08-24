@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [24/Aug/2019:01:14:30 -0700] "GET / HTTP/1.1" 200 1335 http-bio-8080-exec-1 371
+0:0:0:0:0:0:0:1 - - [24/Aug/2019:01:14:30 -0700] "GET /webjars/bootstrap/3.3.6/css/bootstrap.min.css HTTP/1.1" 200 16384 http-bio-8080-exec-2 13
+0:0:0:0:0:0:0:1 - - [24/Aug/2019:01:14:30 -0700] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-3 6
+0:0:0:0:0:0:0:1 - - [24/Aug/2019:01:14:52 -0700] "POST /LoginServlet.do HTTP/1.1" 200 - http-bio-8080-exec-4 2537
+0:0:0:0:0:0:0:1 - - [24/Aug/2019:01:15:18 -0700] "POST /LoginServlet.do HTTP/1.1" 200 901 http-bio-8080-exec-5 2851
+0:0:0:0:0:0:0:1 - - [24/Aug/2019:01:15:28 -0700] "GET /ProductServlet.do HTTP/1.1" 200 7167 http-bio-8080-exec-6 466

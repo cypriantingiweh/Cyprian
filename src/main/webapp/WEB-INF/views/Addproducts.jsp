@@ -22,36 +22,36 @@ pageEncoding="UTF-8"%>
 	<body>
 		 <nav class="navbar navbar-default">
 			
-					<a href="#">Brand</a>
+					<a href="/" class="navbar-brand">Brand</a>
 			
 					<ul class="nav navbar-nav">
 						<li><a href="#">Home</a></li>
-						<li><a href="#">Products</a></li>
+						<li class="navbar-brand"><a href="/ProductServlet">Products</a></li>
 						<li><a href="#">Category</a></li>
 					</ul>
 			
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="/LoginServlet.do">Login</a></li>
-							<li><a class="active" href="#">Sign-In</a></li>
+							<li><a href="/SignInServlet.do">Sign-In</a></li>
 					</ul>
 			
 				</nav>
 		
 	<div class="container">
-		<h1>Welcome  To Enter my Shope Sign-in </h1>
+		<h3>Enter product description and category </h3>
 		<br /><br />
-		<form action="/SignInServlet.do" method="post" class = "form-group">
+		<form action="/Addproducts.do" method="post" class = "form-group">
 			
-				   
-					 <input type="text" name="name" class = "form-control" value = "Name">
+				   Product Description
+					 <input type="text" name="PName" class = "form-control" value = "">
 					 <br />
 					 <br />
-					 <input type="text" name="username" class = "form-control"  value = "Username">
+					 Product Category
+					 <input type="text" name="PCategory" class = "form-control"  value = "">
 					 <br />
 					 <br />
-					 <input type="text" name="password" class = "form-control" value = "Password">
-						<br />
-		              <input class="btn btn-success" type="submit" value="sign-in">
+					
+		              <input class="btn btn-success" type="submit" value="Add">
 		</form>
 	</div>
 </body>
