@@ -17,40 +17,44 @@ import com.project.todo.Todo;
 public class ProductServlet extends HttpServlet{
 
 	private static final long serialVersionUID = 1L;
+public void doGet(HttpServletRequest request, HttpServletResponse response)
+		throws ServletException,IOException{
+                    
 
-public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException{
-	  
-	   
-                    response.setContentType("image/jpg"); 
-                  
-  					List<Todo> dataList = new ArrayList<Todo>(); 
+                   
+  					List<Todo> dataList = new ArrayList<Todo>();
+  					request.getParameter("Pid");
 
   			try {
+  				
+  				
+  				
   						java.sql.Connection c = DatabaseConnection.connect();
-  		  	    	  java.sql.PreparedStatement pc = c.prepareStatement("select * from market");
+  		  	    	  java.sql.PreparedStatement pc = c.prepareStatement("select * from market ");
   		  	    	  
   		  	    	  	pc.executeQuery ();
 
   		  	    	ResultSet rs = pc.getResultSet();
-
+        
 						  while (rs.next()){
-						  //Add records into data list
-						
-					dataList.add(new Todo(rs.getString("Pid"),rs.getString("PName"),rs.getString("PCategory"),
-							rs.getBytes("Picture")));
-  					}
+							
+							 
+							  
+					dataList.add(new Todo(rs.getString("Pid"),rs.getString("PName"),rs.getString("PCategory")));
+						  }
+						  
 
-  				rs.close ();
+  				//rs.close ();
 
-  				pc.close ();
-
+  				//pc.close ();
+						  
 				  }catch(Exception e){
 				
 				  System.out.println("Exception is ;"+e);
 				
 				  }
 				
-				  request.setAttribute("data",dataList);
+				  request.setAttribute("data", dataList );
 				
 				
 				  RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/views/Products.jsp");

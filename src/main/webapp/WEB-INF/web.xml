@@ -5,7 +5,7 @@
 	<display-name>To do List</display-name>
 
 	<welcome-file-list>
-		<welcome-file>LoginServlet.do</welcome-file>
+		<welcome-file>FrontpageServlet</welcome-file>
 	</welcome-file-list>
 
 </web-app>

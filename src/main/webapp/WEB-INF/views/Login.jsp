@@ -8,6 +8,9 @@ pageEncoding="UTF-8"%>
 	rel="stylesheet">
 
 <style>
+.container{
+	Font-color:white;
+}
 .footer {
 	position: absolute;
 	bottom: 0;

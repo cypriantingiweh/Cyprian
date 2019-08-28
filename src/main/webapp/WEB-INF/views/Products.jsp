@@ -1,3 +1,4 @@
+<%@page import="java.io.OutputStream"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -20,7 +21,6 @@ pageEncoding="UTF-8"%>
 }
 </style>
 </head>
-
 	<body>
 		 <nav class="navbar navbar-default">
 			
@@ -52,11 +52,12 @@ pageEncoding="UTF-8"%>
 				<th>EditAction</th>
 				<th>DeleteAction</th>
 				</tr>
-						
 		<c:forEach items="${data}" var="data">
 				<tr>
 					<td>${data.getPid()}</td>
-					<td>${data.getRawBytes()}</td>
+	
+					 <td><img src="/DisplayServlet.do?Pid=${data.getPid()}" width = "50px" hieght = "40px"></td>
+					
 					<td>${data.getPname()}</td>
 					<td>${data.getPcategory()}</td>
 					<td>

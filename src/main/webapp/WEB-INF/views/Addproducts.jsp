@@ -4,6 +4,7 @@ pageEncoding="UTF-8"%>
 <html>
 <head>
     <title>Login and Sign-Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
 		
@@ -40,19 +41,22 @@ pageEncoding="UTF-8"%>
 	<div class="container">
 		<h3>Enter product description and category </h3>
 		<br /><br />
-		<form action="/Addproducts.do" method="post" class = "form-group">
-			
-				   Product Description
-					 <input type="text" name="PName" class = "form-control" value = "">
+		<form  method="post" class = "form-group" action="/Addproducts.do" enctype="multipart/form-data">
+				Pid
+				    <input type="text" name="Pid" class = "form-control" value = "" size="50">
+				     <br />
+					 <br />
+				  Product Description
+					 <input type="text" name="PName" class = "form-control" value = ""size="50">
 					 <br />
 					 <br />
-					 Product Category
-					 <input type="text" name="PCategory" class = "form-control"  value = "">
+				 Product Category
+					 <input type="text" name="PCategory" class = "form-control"  value = "" size="50">
 					 <br />
-					 <br />
-					
+					 <input type="file" name="photo" size="10"/>
 		              <input class="btn btn-success" type="submit" value="Add">
 		</form>
+		
 	</div>
 </body>
 </html>
