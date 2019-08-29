@@ -40,7 +40,7 @@ pageEncoding="UTF-8"%>
 	<div class="container">
 		<h3>Edit product description and category </h3>
 		<br /><br />
-		<form action="/EditServlet.do" method="post" class = "form-group">
+		<form action="/EditServlet.do" method="post" class = "form-group" enctype="multipart/form-data">
 						
 				Pid
 					<input type="text" name="Pid" class = "form-control" value = "<%=request.getAttribute("P-id") %>">
@@ -56,7 +56,10 @@ pageEncoding="UTF-8"%>
 					 <input type="text" name="PCategory" class = "form-control"  value = "<%=request.getAttribute("P-Category") %>">
 					 <br />
 					 <br />
-					
+				 <img src="data:image/jpg;Base64,${P-ture}" width="40" height="50"/>
+					<input type="file" name="photo" size="10" >
+					<br />
+					 <br />
 		              <input class="btn btn-success" type="submit" value="Edit">
 		</form>
 	</div>

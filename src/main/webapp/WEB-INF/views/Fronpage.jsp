@@ -46,14 +46,14 @@ pageEncoding="UTF-8"%>
 		<div class="container">	
 		<table>
 		<tr>
-		  <c:forEach items="${data}" var="data">
+		  <c:forEach items="${prod}" var="prod">
 				
 				<br />
 				<td>
-				<img src="/DisplayServlet.do?Pid=${data.getPid()}" width = "50px" height = "40px"><br />
-				Product-ID:	${data.getPid()}<br />
-				Product Name:${data.getPname()}<br />
-				Product Category: ${data.getPcategory()}<br />
+				<img src="data:image/jpg;Base64,${prod.getBaseimg()}" width="70" height="60"/>
+				Product-ID:	${prod.getPid()}<br />
+				Product Name:${prod.getPname()}<br />
+				Product Category: ${prod.getPcategory()}<br />
 				</td>
 			</c:forEach>
 		</tr>	

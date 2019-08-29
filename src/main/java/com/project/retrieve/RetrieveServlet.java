@@ -26,12 +26,16 @@ public class RetrieveServlet extends HttpServlet {
     	String Pidc = request.getParameter("Pid");
     	String PNamec = request.getParameter("PName");
 	      String PCategoryc = request.getParameter("PCategory");
+	      String Pictures= request.getParameter("Picture");
+	      
 	      System.out.print(Pidc);
 	      System.out.print(PNamec);
 	      System.out.print(PCategoryc);
+	      
 	      request.setAttribute("P-Name", PNamec);
 	      request.setAttribute("P-Category", PCategoryc);
 	      request.setAttribute("P-id", Pidc);
+	      request.setAttribute("P-ture", Pictures);
 	      
     	RequestDispatcher g=request.getRequestDispatcher("/WEB-INF/views/Edit.jsp");
 		  g.forward(request, response);

@@ -52,21 +52,21 @@ pageEncoding="UTF-8"%>
 				<th>EditAction</th>
 				<th>DeleteAction</th>
 				</tr>
-		<c:forEach items="${data}" var="data">
+		<c:forEach items="${prod}" var="prod">
 				<tr>
-					<td>${data.getPid()}</td>
-	
-					 <td><img src="/DisplayServlet.do?Pid=${data.getPid()}" width = "50px" hieght = "40px"></td>
+					<td>${prod.getPid()}</td>
+					<td><img src="data:image/jpg;Base64,${prod.getBaseimg()}" width="40" height="50"/></td>
 					
-					<td>${data.getPname()}</td>
-					<td>${data.getPcategory()}</td>
+					<td>${prod.getPname()}</td>
+					<td>${prod.getPcategory()}</td>
 					<td>
-					<a class="btn btn-success" href = "/RetrieveServlet.do?Pid=${ data.getPid()}&PName=${data.getPname()}&PCategory=${ data.getPcategory()}" >
-					Edit</a>
+ 				<a class="btn btn-success" href = "/RetrieveServlet.do?Pid=${prod.getPid()}&PName=${prod.getPname()}&PCategory=${ prod.getPcategory()}">
+ 					Edit</a>
 					 </td>
-					<td><a class="btn btn-danger" href="/deleteproducts.do?Pid=${data.getPid()}
-					&Pname = ${data.getPname()}&Pcategory = ${ data.getPcategory()}">Delete</a></td>
-				</tr>
+					<td><a class="btn btn-danger" href="/deleteproducts.do?Pid=${prod.getPid()}
+					&Pname = ${prod.getPname()}&Pcategory = ${ prod.getPcategory()}">Delete</a></td>
+				 
+				 </tr>
 			</c:forEach>		
 		</table>
 		<a href = "/Addproducts.do" class = "btn btn-success"> AddProduct</a>

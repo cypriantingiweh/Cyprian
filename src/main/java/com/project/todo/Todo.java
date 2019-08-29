@@ -6,14 +6,7 @@ import java.util.Arrays;
 
 public class Todo {
 	 private String Pid, Pname, Pcategory;
-	   private InputStream in;
-
-	public Todo(String pid, String pname, String pcategory) {
-		super();
-		Pid = pid;
-		Pname = pname;
-		Pcategory = pcategory;
-	}
+	   private String baseimage;
 
 	public String getPid() {
 		return Pid;
@@ -37,6 +30,14 @@ public class Todo {
 
 	public void setPcategory(String pcategory) {
 		Pcategory = pcategory;
+	}
+
+	public String getBaseimg() {
+		return baseimage;
+	}
+
+	public void setBaseimage(String baseimage) {
+		this.baseimage = baseimage;
 	}
 
 	}
