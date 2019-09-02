@@ -15,7 +15,7 @@ public class RetrieveController {
 	
 	
 	private  ResultSet rs;
-	private List<Todo> result = new ArrayList();
+	private List<Todo> result = new ArrayList<Todo>();
 
 	public RetrieveController() {}
 	
@@ -23,7 +23,7 @@ public class RetrieveController {
 		int Pid=0;
 			try{
 				java.sql.Connection c = DatabaseConnection.connect();
-				String sql ="select * from market";
+				String sql ="select * from products";
 				  java.sql.PreparedStatement pc = c.prepareStatement(sql);
 				
 					pc.executeQuery ();
@@ -36,7 +36,7 @@ public class RetrieveController {
 
 						    prod.setPid(rs.getString("Pid")); 	 	 	 
 						    prod.setPname(rs.getString("PName"));
-						    prod.setPcategory(rs.getString("PCategory"));
+						    prod.setPcategory(rs.getString("CName"));
 						    Blob blob = rs.getBlob("Picture");
 							InputStream inputStream = blob.getBinaryStream();
 							ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
@@ -52,7 +52,6 @@ public class RetrieveController {
 							prod.setBaseimage(baseimg);
 							result.add(Pid, prod);
 						    Pid++;
-						    System.out.println("ok");
 						}
 						
 						//con.close();

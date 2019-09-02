@@ -23,36 +23,36 @@ nav {
 	<body>
 		 <nav class="navbar navbar-default">
 			
-			
 					<ul class="nav navbar-nav">
 						<li><a href="/FrontpageServlet">Home</a></li>
-						<li><a href="#">Welcome</a></li>
-						<li><a href="#">Products</a></li>
+						<li><a href="/WelcomeServlet">Welcome</a></li>
+						<li><a  class="active" href="/ProductServlet.do">Products</a></li>
 						<li><a href="#">Category</a></li>
 					</ul>
 			
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="/LoginServlet.do">Login</a></li>
-							<li><a class="active" href="#">Sign-In</a></li>
+						<li><a  class = "nav-link" href="/logout.do">LogOut</a></li>
+							<li><a href="/SignInServlet.do">Sign-In</a></li>
 					</ul>
 			
 				</nav>
 		
 	<div class="container">
-		<h1>Welcome  To Enter my Shope Sign-in </h1>
+		<h3>Edit product category </h3>
 		<br /><br />
-		<form action="/SignInServlet.do" method="post" class = "form-group">
+		<form action="/EditCategoryServlet.do" method="post" class = "form-group" enctype="multipart/form-data">
+						
+				Category Name
+					<input type="text" name="CName" class = "form-control" value = "<%=request.getAttribute("C-Name") %>">
+					<br/>
+					<br/>
+				   Category Id
 			
-				   
-					 <input type="text" name="name" class = "form-control" value = "Name">
+					<input type="text" name="Cid" class = "form-control" value = "<%=request.getAttribute("C-id") %>">
 					 <br />
-					 <br />
-					 <input type="text" name="username" class = "form-control"  value = "Username">
-					 <br />
-					 <br />
-					 <input type="text" name="password" class = "form-control" value = "Password">
-						<br />
-		              <input class="btn btn-success" type="submit" value="sign-in">
+					 
+					<br />
+		              <input class="btn btn-success" type="submit" value="Edit">
 		</form>
 	</div>
 </body>

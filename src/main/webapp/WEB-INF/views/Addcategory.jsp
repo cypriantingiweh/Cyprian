@@ -4,6 +4,7 @@ pageEncoding="UTF-8"%>
 <html>
 <head>
     <title>Login and Sign-Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
     <link href="webjars/bootstrap/3.3.6/css/bootstrap.min.css"
 	rel="stylesheet">
 		
@@ -23,37 +24,35 @@ nav {
 	<body>
 		 <nav class="navbar navbar-default">
 			
-			
 					<ul class="nav navbar-nav">
 						<li><a href="/FrontpageServlet">Home</a></li>
-						<li><a href="#">Welcome</a></li>
-						<li><a href="#">Products</a></li>
+						<li><a href="/WelcomeServlet">Welcome</a></li>
+						<li class="navbar-brand"><a href="/ProductServlet">Products</a></li>
 						<li><a href="#">Category</a></li>
 					</ul>
 			
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="/LoginServlet.do">Login</a></li>
-							<li><a class="active" href="#">Sign-In</a></li>
+							<li><a href="/SignInServlet.do">Sign-In</a></li>
 					</ul>
 			
 				</nav>
 		
 	<div class="container">
-		<h1>Welcome  To Enter my Shope Sign-in </h1>
+		<h3>Enter Category Id and Name </h3>
 		<br /><br />
-		<form action="/SignInServlet.do" method="post" class = "form-group">
-			
-				   
-					 <input type="text" name="name" class = "form-control" value = "Name">
+		<form  method="post" class = "form-group" action="/Addcategory.do" >
+				Category Id
+				    <input type="text" name="Cid" class = "form-control" value = "" size="50">
+				     <br />
+					 <br />
+				  Product Category Name
+					 <input type="text" name="CName" class = "form-control" value = ""size="50">
 					 <br />
 					 <br />
-					 <input type="text" name="username" class = "form-control"  value = "Username">
-					 <br />
-					 <br />
-					 <input type="text" name="password" class = "form-control" value = "Password">
-						<br />
-		              <input class="btn btn-success" type="submit" value="sign-in">
+		              <input class="btn btn-success" type="submit" value="Add-Category">
 		</form>
+		
 	</div>
 </body>
 </html>

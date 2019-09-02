@@ -9,12 +9,13 @@ pageEncoding="UTF-8"%>
 		
 		
 <style>
-.footer {
+nav {
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	width: 100%;
 	height: 60px;
-	background-color: #f5f5f5;
+	background-color: #8c8cd9;
+	font-size:18px;
 }
 </style>
 </head>
@@ -22,17 +23,16 @@ pageEncoding="UTF-8"%>
 	<body>
 		 <nav class="navbar navbar-default">
 			
-					<a href="#">Brand</a>
-			
 					<ul class="nav navbar-nav">
-						<li><a href="#">Home</a></li>
-						<li class="navbar-brand"><a  class="active" href="/ProductServlet.do">Products</a></li>
+						<li><a href="/FrontpageServlet">Home</a></li>
+						<li><a href="/WelcomeServlet">Welcome</a></li>
+						<li><a  class="active" href="/ProductServlet.do">Products</a></li>
 						<li><a href="#">Category</a></li>
 					</ul>
 			
 					<ul class="nav navbar-nav navbar-right">
 						<li><a  class = "nav-link" href="/logout.do">LogOut</a></li>
-							<li><href="/SignInServlet.do">Sign-In</a></li>
+							<li><a href="/SignInServlet.do">Sign-In</a></li>
 					</ul>
 			
 				</nav>
@@ -56,10 +56,11 @@ pageEncoding="UTF-8"%>
 					 <input type="text" name="PCategory" class = "form-control"  value = "<%=request.getAttribute("P-Category") %>">
 					 <br />
 					 <br />
-				 <img src="data:image/jpg;Base64,${P-ture}" width="40" height="50"/>
+					  Change Picture
+					  <br />
+					  <img src="data:image/jpg;Base64,${Image}" width="40" height="50"/>
 					<input type="file" name="photo" size="10" >
 					<br />
-					 <br />
 		              <input class="btn btn-success" type="submit" value="Edit">
 		</form>
 	</div>

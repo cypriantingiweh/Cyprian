@@ -12,28 +12,29 @@ pageEncoding="UTF-8"%>
 	rel="stylesheet">
 
 <style>
-.footer {
+nav {
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	width: 100%;
 	height: 60px;
-	background-color: #f5f5f5;
+	background-color: #8c8cd9;
+	font-Size:18px;
 }
 </style>
 </head>
 	<body>
 		 <nav class="navbar navbar-default">
 			
-					<a href="/" class="navbar-brand">Brand</a>
 			
 					<ul class="nav navbar-nav">
-						<li><a href="#">Home</a></li>
+						<li><a href="/FrontpageServlet">Home</a></li>
+						<li><a href="/WelcomeServlet">Welcome</a></li>
 						<li><a class = "active" href="#">Products</a></li>
 						<li><a href="#">Category</a></li>
 					</ul>
 			
 					<ul class="nav navbar-nav navbar-right">
-						<li><a class="active" href="/logout.do">LogOut</a></li>
+						<li><a href="/logout.do">LogOut</a></li>
 							<li><a href="/SignInServlet.do">Sign-In</a></li>
 					</ul>
 			
@@ -63,8 +64,7 @@ pageEncoding="UTF-8"%>
  				<a class="btn btn-success" href = "/RetrieveServlet.do?Pid=${prod.getPid()}&PName=${prod.getPname()}&PCategory=${ prod.getPcategory()}">
  					Edit</a>
 					 </td>
-					<td><a class="btn btn-danger" href="/deleteproducts.do?Pid=${prod.getPid()}
-					&Pname = ${prod.getPname()}&Pcategory = ${ prod.getPcategory()}">Delete</a></td>
+					<td><a class="btn btn-danger" href="/deleteproducts.do?Pid=${prod.getPid()}&Pname = ${prod.getPname()}&Pcategory = ${ prod.getPcategory()}">Delete</a></td>
 				 
 				 </tr>
 			</c:forEach>		

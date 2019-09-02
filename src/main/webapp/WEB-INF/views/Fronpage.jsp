@@ -12,29 +12,29 @@ pageEncoding="UTF-8"%>
 	rel="stylesheet">
 
 <style>
-.footer {
+nav {
 	position: absolute;
 	bottom: 0;
 	width: 100%;
 	height: 60px;
-	background-color: #f5f5f5;
+	background-color: #8c8cd9;
+	font-size:18px;
 }
 </style>
 </head>
 	<body>
 		 <nav class="navbar navbar-default">
 			
-					<a href="/" class="navbar-brand">Brand</a>
-			
 					<ul class="nav navbar-nav">
-						<li><a class =  "active" href="#">Home</a></li>
+					    <li><a class =  "active" href="/FrontpageServlet">Home</a></li>
+						<li><a href="#">Welcome</a></li>
 						<li><a href="#">Products</a></li>
 						<li><a href="#">Category</a></li>
 					</ul>
 			
 					<ul class="nav navbar-nav navbar-right">
-						<li><a class="active" href="/LoginServlet.do">Login</a></li>
-							<li><a href="/SignInServlet.do">Sign-In</a></li>
+						<li><a href="/LoginServlet.do">Login</a></li>
+						<li><a href="/SignInServlet.do">Sign-In</a></li>
 					</ul>
 			
 				</nav>
@@ -45,18 +45,22 @@ pageEncoding="UTF-8"%>
 			</div>	
 		<div class="container">	
 		<table>
-		<tr>
+		
 		  <c:forEach items="${prod}" var="prod">
 				
-				<br />
+				<tr>
 				<td>
-				<img src="data:image/jpg;Base64,${prod.getBaseimg()}" width="70" height="60"/>
-				Product-ID:	${prod.getPid()}<br />
-				Product Name:${prod.getPname()}<br />
-				Product Category: ${prod.getPcategory()}<br />
+				<img src="data:image/jpg;Base64,${prod.getBaseimg()}" width="170" height="160"/><br>
+				Product-ID:	${prod.getPid()}<br>
+				Product Name:${prod.getPname()}<br>
+				Product Category: ${prod.getPcategory()}<br>
 				</td>
+				
+				</tr>
+				
+				
 			</c:forEach>
-		</tr>	
+			
 		</table>		
 	</div>
 </body>

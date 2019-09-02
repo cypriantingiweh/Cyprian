@@ -7,6 +7,17 @@ import java.util.Arrays;
 public class Todo {
 	 private String Pid, Pname, Pcategory;
 	   private String baseimage;
+	   
+	   
+
+	public Todo() {
+		super();
+	}
+	public Todo(String pid, String pname) {
+		super();
+		Pid = pid;
+		Pname = pname;
+	}
 
 	public String getPid() {
 		return Pid;

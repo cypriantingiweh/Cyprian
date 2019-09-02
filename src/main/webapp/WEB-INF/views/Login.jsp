@@ -11,12 +11,13 @@ pageEncoding="UTF-8"%>
 .container{
 	Font-color:white;
 }
-.footer {
+nav{
 	position: absolute;
-	bottom: 0;
+	top: 0;
 	width: 100%;
 	height: 60px;
-	background-color: #f5f5f5;
+	background-color: #8c8cd9;
+	font-size:18px;
 }
 </style>
 </head>
@@ -24,10 +25,11 @@ pageEncoding="UTF-8"%>
 	<body>
 		 <nav class="navbar navbar-default">
 			
-					<a href="#">Brand</a>
+					
 			
 					<ul class="nav navbar-nav">
-						<li><a href="/">Home</a></li>
+						<li><a href="/FrontpageServlet">Home</a></li>
+						<li><a href="/">Welcome</a></li>
 						<li><a href="/">Products</a></li>
 						<li><a href="/">Category</a></li>
 					</ul>

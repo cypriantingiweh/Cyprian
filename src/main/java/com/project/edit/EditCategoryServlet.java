@@ -19,36 +19,28 @@ import com.project.connection.DatabaseConnection;
 /**
  * Servlet implementation class EditServlet
  */
-@WebServlet("/EditServlet.do")
+@WebServlet("/EditCategoryServlet.do")
 @MultipartConfig(maxFileSize = 16177215)
-public class EditServlet extends HttpServlet {
+public class EditCategoryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	
-    	InputStream inputStream = null;
-    	 
+     
         try{
-    	      String PName = request.getParameter("PName");
+    	      String Cid = request.getParameter("Cid");
     	    
-    	      Part filePart = request.getPart("photo");
-    	    	 if (filePart != null) {
-    		            // obtains input stream of the upload file
-    		    	   inputStream = filePart.getInputStream();
-    		        }
-            String sql = "UPDATE products SET PName = ?,Picture = ? where Pid = ?";
+            String sql = "UPDATE category SET Cid = ? where CName = ?";
             java.sql.Connection conn = DatabaseConnection.connect();
             PreparedStatement pst = conn.prepareStatement(sql);
            
           
-            pst.setString(1,PName);
-            pst.setBlob(2, inputStream);
-            pst.setString(3,request.getParameter("Pid"));
+            pst.setString(1,Cid);
+            pst.setString(2,request.getParameter("CName"));
            
 
             pst.executeUpdate();
             
-            response.sendRedirect("/ProductServlet.do");
+            response.sendRedirect("/WelcomeServlet");
 
         }
         catch(SQLException e){

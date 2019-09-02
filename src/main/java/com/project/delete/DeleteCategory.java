@@ -26,8 +26,8 @@ import com.project.todo.Todo;
 /**
  * Servlet implementation class RegisterController
  */
-@WebServlet("/deleteproducts.do")
-public class DeleteProduct extends HttpServlet {
+@WebServlet("/deleteCategory.do")
+public class DeleteCategory extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
 	
@@ -35,11 +35,11 @@ public class DeleteProduct extends HttpServlet {
 
         try{
         	
-            String sql = "Delete From products where Pid=?";
+            String sql = "Delete From category where CName=?";
             java.sql.Connection conn = DatabaseConnection.connect();
             PreparedStatement pst = conn.prepareStatement(sql);
             
-           pst.setString(1, request.getParameter("Pid"));
+           pst.setString(1, request.getParameter("CName"));
             
            
             pst.executeUpdate();
@@ -50,7 +50,7 @@ public class DeleteProduct extends HttpServlet {
         catch(SQLException e){
             e.printStackTrace();
         }
-        response.sendRedirect("/ProductServlet.do");
+        response.sendRedirect("/WelcomeServlet");
 
     }
 }

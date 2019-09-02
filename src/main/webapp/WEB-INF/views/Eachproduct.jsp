@@ -45,22 +45,13 @@ nav{
 		<table class = "table table-striped">
 			<c:forEach items="${prod}" var="prod">
 				<tr>
-					<td>${prod.getPid()}</td>
+					<td><img src="data:image/jpg;Base64,${prod.getBaseimg()}" width="80" height="100"/></td> 
 					<td>${prod.getPname()}</td>
-					<td><a class="btn btn-success" href = "/EachProductServlet?CName=${prod.getPname()}">Products-Under-Category</a></td>
-					<td><a class="btn btn-success" href = "/RetrievetoEditCategory?CName=${prod.getPname()}&Cid=${prod.getPid()}">Edit</a></td>
-					<td><a class="btn btn-danger" href="/deleteCategory.do?CName=${prod.getPname()}&Cid=${prod.getPid()}">Delete</a></td>
+					
 				</tr>	
 			</c:forEach>
 		</table>	
-					 <br /> 
-					 <br />
-			 
-			<a href = "/Addcategory.do"  class="btn btn-success"> Add-Category</a>
-			<br /> 
-		
-
-	 <br />
+				
  </div>
  
 </body>

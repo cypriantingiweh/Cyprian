@@ -23,57 +23,38 @@ import com.project.connection.DatabaseConnection;
  * 
  */
 
-@WebServlet( urlPatterns ="/Addproducts.do")
+@WebServlet( urlPatterns ="/Addcategory.do")
 
 @MultipartConfig(maxFileSize = 16177215)
-public class AddProduct extends HttpServlet {
+public class AddCategory extends HttpServlet {
     private static final long serialVersionUID = 1L;
     
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 	   {
 	   
-    	RequestDispatcher g=request.getRequestDispatcher("/WEB-INF/views/Addproducts.jsp");
+    	RequestDispatcher g=request.getRequestDispatcher("/WEB-INF/views/Addcategory.jsp");
 		  g.forward(request, response);
 		
 	   }
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		InputStream inputStream = null;
-		 
+	 
         try{
 			
-        	String Pid = request.getParameter("Pid");
-    	      String PName = request.getParameter("PName");
-    	      String PCategory = request.getParameter("PCategory");
-    	      
-    	      
-    	      Part filePart = request.getPart("photo");
-    	      
-    	    
-    	       if (filePart != null) {
-    	            // obtains input stream of the upload file
-    	    	   inputStream = filePart.getInputStream();
-    	        }
-    	    
-    	     
-            String sql = "insert into products(Pid,PName,Picture) values(?,?,?)";
+        	String Cid = request.getParameter("Cid");
+    	      String CName = request.getParameter("CName");
+    	   
+            String sql = "insert into category(Cid,CName) values(?,?)";
             java.sql.Connection conn = DatabaseConnection.connect();
             PreparedStatement pst = conn.prepareStatement(sql);
             
-            pst.setString(1,Pid);
-            pst.setString(2,PName);
-            pst.setBlob(3, inputStream);
-           // pst.setString(3, PCategory);
-           
-       
+            pst.setString(1,Cid);
+            pst.setString(2,CName);
+      
             pst.executeUpdate();
-           
-            
-            response.sendRedirect("/ProductServlet.do");
-            
+            response.sendRedirect("/WelcomeServlet");
         }
         catch(SQLException e){
             e.printStackTrace();
